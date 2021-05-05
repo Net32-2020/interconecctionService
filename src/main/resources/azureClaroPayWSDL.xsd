@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.azureClaroPayAgile.com/soap/workItem"
+	xmlns:tns="http://www.azureClaroPayAgile.com/soap/workItem"
+	elementFormDefault="qualified">
+	
+	<xsd:element name="getIssueRequest">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="idIssue" type="xsd:int" />
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+	<xsd:element name="getIssueResponse">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="issueWorkItem" type="tns:issueWorkItem" />
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:complexType name="issueWorkItem">
+        <xsd:sequence>
+            <xsd:element name="idIssue" type="xsd:int" />
+            <xsd:element name="titulo" type="xsd:string" />
+            <xsd:element name="descripcion" type="xsd:string" />
+            <xsd:element name="estado" type="xsd:string" />
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>
